@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD63B71F-6628-4BD1-BD2C-524D2FD9BD91}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KeyConductorSDKTester</RootNamespace>
+    <AssemblyName>KeyConductorSDKTester</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="KeyConductorSDKStandard, Version=3.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\KeyConductorSDKStandard.3.4.6\lib\netstandard2.0\KeyConductorSDKStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="MsgPack, Version=0.9.0.0, Culture=neutral, PublicKeyToken=a2625990d5dc0167, processorArchitecture=MSIL">
+      <HintPath>..\packages\MsgPack.Cli.0.9.2\lib\net46\MsgPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveMatrix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActiveMatrix.Designer.cs">
+      <DependentUpon>ActiveMatrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\KeyConductorServer.cs" />
+    <Compile Include="Classes\LogMessageEventArgs.cs" />
+    <Compile Include="Classes\ServerProtocol.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DigiDevice\frmDigiDeviceConfigure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DigiDevice\frmDigiDeviceConfigure.Designer.cs">
+      <DependentUpon>frmDigiDeviceConfigure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DigiDevice\frmDigiDeviceDiscovery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DigiDevice\frmDigiDeviceDiscovery.Designer.cs">
+      <DependentUpon>frmDigiDeviceDiscovery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMatrixTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMatrixTester.Designer.cs">
+      <DependentUpon>FormMatrixTester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeyConductorEmulator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeyConductorEmulator.Designer.cs">
+      <DependentUpon>KeyConductorEmulator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiveViewViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiveViewViewer.Designer.cs">
+      <DependentUpon>LiveViewViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogFileViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogFileViewer.Designer.cs">
+      <DependentUpon>LogFileViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceEditor2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceEditor2.Designer.cs">
+      <DependentUpon>ResourceEditor2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceEditor3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceEditor3.Designer.cs">
+      <DependentUpon>ResourceEditor3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialCharEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpecialCharEditor.Designer.cs">
+      <DependentUpon>SpecialCharEditor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActiveMatrix.resx">
+      <DependentUpon>ActiveMatrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DigiDevice\frmDigiDeviceConfigure.resx">
+      <DependentUpon>frmDigiDeviceConfigure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DigiDevice\frmDigiDeviceDiscovery.resx">
+      <DependentUpon>frmDigiDeviceDiscovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMatrixTester.resx">
+      <DependentUpon>FormMatrixTester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeyConductorEmulator.resx">
+      <DependentUpon>KeyConductorEmulator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveViewViewer.resx">
+      <DependentUpon>LiveViewViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogFileViewer.resx">
+      <DependentUpon>LogFileViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ResourceEditor2.resx">
+      <DependentUpon>ResourceEditor2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceEditor3.resx">
+      <DependentUpon>ResourceEditor3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecialCharEditor.resx">
+      <DependentUpon>SpecialCharEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
